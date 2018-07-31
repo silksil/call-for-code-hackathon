@@ -2,6 +2,7 @@ const passport = require('passport');
 
 module.exports = (app) => {
   app.get('/auth/google',
+
   // the route that initializes getting the user's google profile
     passport.authenticate('google', { // google's strategy is known as 'google'
       scope: ['profile', 'email'], // you are stating here what type of info you want from google
@@ -15,11 +16,13 @@ module.exports = (app) => {
   );
 
   app.get('/api/logout', (req, res) => {
+    console.log(req.body)
     req.logout(); // logout() is automatically attched to the request object by passport
     res.redirect('/');
   });
 
   app.get('/api/current_user', (req, res) => {
+    console.log(req.user)
     res.send(req.user);
   });
 };

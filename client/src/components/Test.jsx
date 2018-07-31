@@ -1,14 +1,13 @@
 import React from 'react';
 
-const Landing = () => {
+const Test = () => {
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>
-        Emaily
+        Call For Code
       </h1>
-      Collect feedback from your users
     </div>
   )
 }
 
-export default Landing;
+export default Test;
