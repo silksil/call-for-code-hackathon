@@ -32,7 +32,7 @@ h3, .small {
 }
 
 /* BUTTONS */
-.btn-green {
+.btn {
   background-color: #58DE6D;
   font-weight: bold;
   color: white;
@@ -40,6 +40,9 @@ h3, .small {
   font-size: 10px;
   border-radius: 5px;
   padding: 10px 35px;
+  .green {
+
+  }
 }
 
 .btn-white {

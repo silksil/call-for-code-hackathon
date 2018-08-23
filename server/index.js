@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost:27017/firstResponders', { useNewUrlParser:
 
 // App Setup
 app.use(morgan('combined')) // middleware - a loggin framework for debugging
-app.use(cors());
+app.use(cors()); // middleware - allows ajax requests from different origins 
 app.use(bodyParser.json({ type: '*/*'})) // middleware - parse incoming requests into json no matter what
 
 
