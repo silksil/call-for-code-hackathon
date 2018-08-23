@@ -1,8 +1,43 @@
 import axios from 'axios';
-import { FETCH_USER } from './types';
+import { AUTH_USER, AUTH_ERROR } from './types';
 
-export const fetchUser = () => async dispatch => {  // whenever fetchUser is called it will instantly return a function
-    const res = await axios.get('/api/current_user'); // if ReduxThunk sees we return a function, instead of a normal function, it will automaticall call this function and pass the dispatch function as an argument
+export const signUp = (formProps, callback ) => async dispatch => {
+  try {
+  const response = await axios.post('/api/signup', formProps);
 
-    dispatch({ type: FETCH_USER, payload: res.data });
+  dispatch({ type: AUTH_USER, payload: response.data.token })
+  localStorage.setItem('token', response.data.token);
+  callback();
+  } catch (error) {
+  dispatch({ type: AUTH_ERROR, payload: 'Email in use' })
+  }
+};
+
+export const signIn = (formProps, callback ) => async dispatch => {
+  try {
+  const response = await axios.post('/api/signin', formProps);
+
+  dispatch({ type: AUTH_USER, payload: response.data.token })
+  localStorage.setItem('token', response.data.token);
+  callback();
+  } catch (error) {
+  dispatch({ type: AUTH_ERROR, payload: 'Invalid login credentials' })
+  }
+};
+
+export const signOut = () => {
+  localStorage.removeItem('token');
+
+  return {
+    type: AUTH_USER,
+    payload: '' // sign out be returning a empty user
+  }
+};
+
+export const submitProfile = (values, history) => async dispatch => {
+  const res = await axios.post('/api/skills', values);
+
+  history.push('/');
+
+  dispatch({ type: AUTH_USER, payload: res.data });
 };

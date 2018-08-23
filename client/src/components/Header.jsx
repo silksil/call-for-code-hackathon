@@ -3,36 +3,36 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class Header extends Component {
-  renderContent() {
-    console.log(this.props.auth)
-    switch(this.props.auth) {
-      case null:
-        return;
-      case false:
-        return <li><a href="/auth/google">Login With Google</a></li>;
-      default:
-        return <li key="3"> <a href="/api/logout"> Logout</a></li>;
+  renderLinks(){
+    if (this.props.authenticated){
+      return(
+        <div>
+          <Link to={'/signout'}> Sign Out </Link>
+        </div>
+      )
     }
-  }
+    else {
+      return (
+        <div>
+          <Link to={'/signup'}> Sign Up </Link>
+          <Link to={'/signin'}> Sign In </Link>
+        </div>
+      )
+    }
 
+  }
   render() {
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <Link to={this.props.auth ? '/dashboard' : '/'}>
-            Call for code
-          </Link>
-          <ul>
-            {this.renderContent()}
-          </ul>
-        </div>
-      </nav>
+      <div className="nav-wrapper">
+        <Link to={'/'}> FirstResponder </Link>
+        {this.renderLinks()}
+      </div>
     );
   }
 }
 
-function mapStateToProps({ auth }) {
-  return { auth };
+function mapStateToProps(state) {
+  return { auth: state.auth.authenticated };
 }
 
 export default connect(mapStateToProps)(Header);

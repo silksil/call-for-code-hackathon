@@ -3,13 +3,18 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import Header from './Header'
-import Test from './Test';
+import Header from './Header';
+import Landing from './Landing';
+import SignUp from './auth/SignUp';
+import SignIn from './auth/SignIn';
+import SignOut from './auth/SignOut';
+import CreateProfile from './profile/CreateProfile';
+import MainMap from './map/MainMap';
+import Test from './test/Test';
+
+import './main.css';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
 
   render() {
     return (
@@ -17,9 +22,12 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            <div className="container">
-              <Route exact path="/" component={Test} />
-            </div>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/signin" component={SignIn} />
+            <Route exact path="/signout" component={SignOut} />
+            <Route exact path="/feature" component={Test} />
+            <Route exact path="/profile" component={CreateProfile} />
           </div>
         </BrowserRouter>
       </div>

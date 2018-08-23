@@ -8,8 +8,7 @@ export default(emails) => {
     .filter(email => !emailRegex.test(email))
 
   if(invalidEmails.length) {
-    return `These emails are invalid: ${invalidEmails}`;
+    return `Please provide a valid email adress`;
   }
-
   return;
 };
