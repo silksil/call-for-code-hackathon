@@ -4,7 +4,6 @@
 
 .container {
   margin: 0 auto;
-  border: 1px black solid;
   width: 85%;
 }
 
@@ -19,7 +18,7 @@
 
 /* SIZES TEXT */
 h1, .big{
-  font-size: 20px;
+  font-size: 24px;
 }
 
 h2, .medium {
@@ -40,6 +39,7 @@ h3, .small {
   font-size: 10px;
   border-radius: 5px;
   padding: 10px 35px;
+  font-size: 12px;
 }
 
 .btn-white {
@@ -50,8 +50,8 @@ h3, .small {
   font-size: 10px;
   border: solid 1px #AEB2B7;
   border-radius: 5px;
-  padding: 16px 32px;
-  margin: 0 10px;
+  padding: 10px 35px;
+  font-size: 12px;
 }
 
 /* INPUT */
@@ -61,26 +61,21 @@ input {
   width: 100%;
   padding: 10px 5px;
   background-color: white;
+  outline: none;
+  margin: 0px 0px 10px 0px;
 }
-
 
 input:focus {
-    border: 3px solid #58DE6D;
+  border: 1px solid #58DE6D;
 }
 
-
-
-/* PLUGINS */
-.react-swipe-container {
-  margin: 20px auto;
-  background-color: white;
-  width: 85%;
-  height: 400px;
+/* WARNINGGG */
+.warning{
+  border: 1px solid red;
 }
 
-.swipe {
-  border: 1px black solid;
-  width: 5px;
-  height: 400px;
-  background-color: pink;
+.warning-text{
+  color:red;
+  font-weight: bold;
+
 }

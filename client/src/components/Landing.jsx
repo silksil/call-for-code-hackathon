@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ReactSwipe from 'react-swipe';
 import { Link } from 'react-router-dom';
-
-
+import '../style/landing.css';
 
 class Landing extends Component {
 
@@ -23,8 +22,8 @@ class Landing extends Component {
           </ReactSwipe>
           <div>
           </div>
-          <Link className="btn-green" to={'/signup'}>Sign Up</Link>
-          <Link className="btn-white" to={'/signin'}>Sign In</Link>
+          <Link className="btn-green" id="btn-landing" to={'/signup'}>Sign Up</Link>
+          <Link className="btn-white" id="btn-landing" to={'/signin'}>Sign In</Link>
         </div>
       </div>
     )

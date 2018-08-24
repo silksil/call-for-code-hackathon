@@ -9,10 +9,9 @@ import SignUp from './auth/SignUp';
 import SignIn from './auth/SignIn';
 import SignOut from './auth/SignOut';
 import CreateProfile from './profile/CreateProfile';
-import MainMap from './map/MainMap';
 import Test from './test/Test';
 
-import './main.css';
+import '../style/main.css';
 
 class App extends Component {
 
