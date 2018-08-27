@@ -1,0 +1,17 @@
+#btn-landing {
+  margin: 0px 10px;
+}
+
+.react-swipe-container {
+  margin: 20px auto;
+  background-color: white;
+  width: 85%;
+  height: 400px;
+}
+
+.swipe {
+  border: 1px black solid;
+  width: 5px;
+  height: 400px;
+  background-color: pink;
+}

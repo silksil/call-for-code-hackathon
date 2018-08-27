@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../actions'
+import { signIn } from '../../actions/action_auth'
 
 class SignIn extends Component {
   onSubmit = (formProps) => {
@@ -13,28 +13,31 @@ class SignIn extends Component {
 	render() {
     const { handleSubmit } = this.props;
 		return (
-			<form onSubmit={handleSubmit(this.onSubmit)}>
-				<fieldset>
-					<label>Email</label>
-					<Field
-						name="email"
-						type="text"
-						component="input"
-            autoComplete="none"
-					/>
-				</fieldset>
-				<fieldset>
-					<label>Password</label>
-					<Field
-						name="password"
-						type="password"
-						component="input"
-            autoComplete="none"
-					/>
-				</fieldset>
-        <div> {this.props.errorMessage}</div>
-        <button>Sign In!</button>
-			</form>
+      <div className="container">
+        <h1 className="center-text"> Sign In</h1>
+  			<form onSubmit={handleSubmit(this.onSubmit)}>
+  				<fieldset>
+  					<label className="grey">Email</label>
+  					<Field
+  						name="email"
+  						type="text"
+  						component="input"
+              autoComplete="none"
+  					/>
+  				</fieldset>
+  				<fieldset>
+  					<label className="grey">Password</label>
+  					<Field
+  						name="password"
+  						type="password"
+  						component="input"
+              autoComplete="none"
+  					/>
+  				</fieldset>
+          <div className="warning-text"> {this.props.errorMessage}</div>
+          <button className="btn-green">Sign In!</button>
+  			</form>
+      </div>
 		);
 	}
 }
@@ -44,7 +47,7 @@ function mapStateToProps(state) {
 }
 
 export default compose (
-  connect(mapStateToProps, actions),
+  connect(mapStateToProps, { signIn }),
   reduxForm({ form: 'signIn' })
 )(SignIn);
 // compose allows you to include as many higher order components with an easier to read syntax

@@ -52,4 +52,4 @@ class Test extends Component {
   }
 }
 
-export default requireAuth(Test);
+export default Test;

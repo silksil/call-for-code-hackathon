@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, FieldArray, reduxForm} from 'redux-form';
 import { connect } from 'react-redux';
 
-import { submitProfile} from '../../actions/index.js';
+import { submitProfile} from '../../actions/action_auth';
 import InputField from '../shared/form/InputField';
 import Switch from '../shared/form/Switch';
 import DropDownSelector from '../shared/form/DropDownSelector';

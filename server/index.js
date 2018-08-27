@@ -18,6 +18,7 @@ app.use(bodyParser.json({ type: '*/*'})) // middleware - parse incoming requests
 
 // Routes
 require('./routes/authRoutes')(app)
+require('./routes/disasterRoutes')(app)
 
 // Deployment Setup
 if (process.env.NODE_ENV === 'production') {
