@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AuthBar(props) {
   return (
-    <div>
+    <div className="sign-in-out-boxes">
       <div className="sign-in-box">
         <button
           onClick={props.updatePage.bind(null, true)}
