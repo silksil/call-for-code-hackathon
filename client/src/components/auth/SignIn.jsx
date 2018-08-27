@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../actions'
+import { signIn } from '../../actions/action_auth'
 
 class SignIn extends Component {
   onSubmit = (formProps) => {
@@ -47,7 +47,7 @@ function mapStateToProps(state) {
 }
 
 export default compose (
-  connect(mapStateToProps, actions),
+  connect(mapStateToProps, { signIn }),
   reduxForm({ form: 'signIn' })
 )(SignIn);
 // compose allows you to include as many higher order components with an easier to read syntax

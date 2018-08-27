@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../actions'
+import { signUp } from '../../actions/action_auth'
 
 class SignUp extends Component {
   onSubmit = (formProps) => {
@@ -11,13 +11,8 @@ class SignUp extends Component {
     });
   }
 
-
-
-
 	render() {
     const className = `${this.props.errorMessage ? 'warning' : 's'}`;
-
-    console.log(className)
 
     const { handleSubmit } = this.props;
 		return (
@@ -55,7 +50,7 @@ function mapStateToProps(state) {
 }
 
 export default compose (
-  connect(mapStateToProps, actions),
+  connect(mapStateToProps, { signUp }),
   reduxForm({ form: 'signUp' })
 )(SignUp);
 // compose allows you to include as many higher order components with an easier to read syntax
