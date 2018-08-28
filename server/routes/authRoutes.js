@@ -10,8 +10,4 @@ module.exports = (app) => {
 
   app.post('/api/signin', requireSignin, authentication.signin)
 
-
-  app.get('/', requireAuth, (req,res)=> {
-    res.send({hi: "there"})
-  })
 }

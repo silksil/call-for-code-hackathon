@@ -13,7 +13,7 @@ import SignIn from './auth/SignIn';
 // Auth Required
 import SignOut from './auth/SignOut';
 import CreateProfile from './profile/CreateProfile';
-import ShowDisasters from './disasters/ShowDisasters';
+import DisastersOverview from './disasters/DisastersOverview';
 import ShowDisaster from './disasters/ShowDisaster';
 import Test from './test/Test';
 
@@ -33,7 +33,7 @@ class App extends Component {
             <Route exact path="/signout" component={SignOut} />
             <Route exact path="/feature" component={Test} />
             <Route exact path="/profile" component={CreateProfile} />
-            <Route exact path="/disasters" component={ShowDisasters} />
+            <Route exact path="/disasters" component={DisastersOverview} />
             <Route path="/disasters/:id" component={ShowDisaster} />
           </div>
         </BrowserRouter>

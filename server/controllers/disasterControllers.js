@@ -6,9 +6,9 @@ exports.allDisasters = (req, res)=> {
 
 exports.oneDisaster = (req, res)=> {
   const id = req.body.id;
-  let disaster = dummyData.filter(disaster => {
-    return disaster.id == id;
-  });
+  let disaster = dummyData
+    .filter(disaster => disaster.id == id)
+    .shift()
 
-  res.send(disaster.shift());
+  res.send(disaster);
 }

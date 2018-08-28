@@ -1,0 +1,47 @@
+.card-container{
+  margin-top: 20px;
+  height: 200px;
+  width: 100%;
+  border: red solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  position: absolute;
+  height: 200px;
+  width: 90%;
+  margin: 0px auto;
+}
+
+.card-disaster-info {
+  border: 1px solid blue;
+  width: 250px;
+  height: 100px;
+  z-index: 100;
+  position: relative;
+  left: -10px;
+  top: 50px;
+}
+
+.card-disaster-level {
+  font-size: 24px;
+  font-weight: bold;
+  border: solid 1px red;
+}
+
+.dot-yes {
+  display: inline-block;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block
+}
+
+.dot-no {
+  background-color: green;
+}

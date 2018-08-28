@@ -3,11 +3,11 @@ import { Field, FieldArray, reduxForm} from 'redux-form';
 import { connect } from 'react-redux';
 
 import { submitProfile} from '../../actions/action_auth';
-import InputField from '../shared/form/InputField';
-import Switch from '../shared/form/Switch';
-import DropDownSelector from '../shared/form/DropDownSelector';
+import InputField from '../shared/form/inputField';
+import Switch from '../shared/form/switch';
+import DropDownSelector from '../shared/form/dropDownSelector';
 import { nationalitiesList } from '../../utils/nationalitiesList';
-import Skills from './Skills';
+import Skills from './skills';
 import validateEmails from '../../utils/validateEmails'
 
 class CreateProfile extends Component {

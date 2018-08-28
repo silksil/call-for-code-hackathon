@@ -6,7 +6,6 @@ export default ({input, label, data, meta: { error, touched }}) => {
       <option key={option} value={option}>{option}</option>
     )
   });
-  
 
   return (
     <div>
