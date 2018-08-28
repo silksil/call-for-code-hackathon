@@ -29,7 +29,7 @@ class Test extends Component {
 
     map.on('load', () => {
       map.addLayer({
-          "id": "points",
+          "id": "users",
           "type": "symbol",
           "source": {
               "type": "geojson",
@@ -43,7 +43,7 @@ class Test extends Component {
                           "coordinates": [32.74, 39.97]
                       },
                       "properties": {
-                          "name": "Annie Wilkis",
+                          "username": "Annie Wilkis",
                           "title": "nurse",
                           "icon": "nurse",
                           "organisation": "Red Cross",
@@ -57,7 +57,7 @@ class Test extends Component {
                           "coordinates": [32.72,39.96]
                       },
                       "properties": {
-                          "name": "Mallory Knox",
+                          "username": "Mallory Knox",
                           "title": "nurse",
                           "icon": "nurse",
                           "organisation": "Red Cross",
@@ -71,7 +71,7 @@ class Test extends Component {
                           "coordinates": [32.745,39.94]
                       },
                       "properties": {
-                          "name": "Samara Morgan",
+                          "username": "Samara Morgan",
                           "title": "nurse",
                           "icon": "nurse",
                           "organisation": "Doctors Without Borders",
@@ -85,7 +85,7 @@ class Test extends Component {
                           "coordinates": [32.75, 39.97]
                       },
                       "properties": {
-                          "name":"Dexter Morgan",
+                          "username":"Dexter Morgan",
                           "title": "doctor",
                           "icon": "doctor",
                           "organisation": "Red Cross",
@@ -99,7 +99,7 @@ class Test extends Component {
                           "coordinates": [32.76, 39.96]
                       },
                       "properties": {
-                          "name":"Norman Bates",
+                          "username":"Norman Bates",
                           "title": "doctor",
                           "icon": "doctor",
                           "organisation": "Doctors Without Borders",
@@ -113,7 +113,7 @@ class Test extends Component {
                           "coordinates": [32.764, 39.964]
                       },
                       "properties": {
-                          "name":"Swenney Todd",
+                          "username":"Swenney Todd",
                           "title": "doctor",
                           "icon": "doctor",
                           "organisation": "Doctors Without Borders",
@@ -127,7 +127,7 @@ class Test extends Component {
                           "coordinates": [32.738, 39.979]
                       },
                       "properties": {
-                          "name":"Hannibal Lecter",
+                          "username":"Hannibal Lecter",
                           "title": "engineer",
                           "icon": "engineer",
                           "organisation": "Engineers organisation",
@@ -141,7 +141,7 @@ class Test extends Component {
                           "coordinates": [32.733, 39.93]
                       },
                       "properties": {
-                          "name":"Michael Mayers",
+                          "username":"Michael Mayers",
                           "title": "engineer",
                           "icon": "engineer",
                           "organisation": "Engineers organisation",
@@ -155,7 +155,7 @@ class Test extends Component {
                           "coordinates": [32.746, 39.936]
                       },
                       "properties": {
-                          "name":"Stu Macher",
+                          "username":"Stu Macher",
                           "title": "engineer",
                           "icon": "engineer",
                           "organisation": "Engineers organisation",
@@ -167,6 +167,36 @@ class Test extends Component {
           },
           "layout": {"icon-image": "{icon}"}
       });
+
+      map.on('click', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['users'] // replace this with the name of the layer
+        });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML('<h3>Nurse</h3><p>Organisation: ' + feature.properties.organisation + '<br />Skills: ' + feature.properties.skills + '<br /></p>')
+          .setLngLat(feature.geometry.coordinates)
+          .addTo(map);
+      });
+
+      // Change the cursor to a pointer when the mouse is over the places layer.
+      map.on('mouseenter', 'users', function () {
+          map.getCanvas().style.cursor = 'pointer';
+      });
+
+      // Change it back to a pointer when it leaves.
+      map.on('mouseleave', 'users', function () {
+          map.getCanvas().style.cursor = '';
+      });
+
+
     });
 
   }
