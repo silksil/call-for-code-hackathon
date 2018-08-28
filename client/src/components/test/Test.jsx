@@ -44,7 +44,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username": "Annie Wilkis",
-                          "title": "nurse",
+                          "title": "Nurse",
                           "icon": "nurse",
                           "organisation": "Red Cross",
                           "skills": "High Skilled"
@@ -58,7 +58,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username": "Mallory Knox",
-                          "title": "nurse",
+                          "title": "Nurse",
                           "icon": "nurse",
                           "organisation": "Red Cross",
                           "skills": "Low Skilled"
@@ -72,7 +72,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username": "Samara Morgan",
-                          "title": "nurse",
+                          "title": "Nurse",
                           "icon": "nurse",
                           "organisation": "Doctors Without Borders",
                           "skills": "Trainee"
@@ -86,7 +86,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username":"Dexter Morgan",
-                          "title": "doctor",
+                          "title": "Doctor",
                           "icon": "doctor",
                           "organisation": "Red Cross",
                           "skills": "Blood Specialist"
@@ -100,7 +100,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username":"Norman Bates",
-                          "title": "doctor",
+                          "title": "Doctor",
                           "icon": "doctor",
                           "organisation": "Doctors Without Borders",
                           "skills": "Anesthisiologist"
@@ -114,7 +114,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username":"Swenney Todd",
-                          "title": "doctor",
+                          "title": "Doctor",
                           "icon": "doctor",
                           "organisation": "Doctors Without Borders",
                           "skills": "Surgent"
@@ -128,7 +128,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username":"Hannibal Lecter",
-                          "title": "engineer",
+                          "title": "Engineer",
                           "icon": "engineer",
                           "organisation": "Engineers organisation",
                           "skills": "CEO"
@@ -141,8 +141,8 @@ class Test extends Component {
                           "coordinates": [32.733, 39.93]
                       },
                       "properties": {
-                          "username":"Michael Mayers",
-                          "title": "engineer",
+                          "username":"Patrick Bateman",
+                          "title": "Engineer",
                           "icon": "engineer",
                           "organisation": "Engineers organisation",
                           "skills": "Structural"
@@ -156,7 +156,7 @@ class Test extends Component {
                       },
                       "properties": {
                           "username":"Stu Macher",
-                          "title": "engineer",
+                          "title": "Engineer",
                           "icon": "engineer",
                           "organisation": "Engineers organisation",
                           "skills": "Statical Engineer"
@@ -181,7 +181,8 @@ class Test extends Component {
 
         var popup = new mapboxgl.Popup({ offset: [0, -15] })
           .setLngLat(feature.geometry.coordinates)
-          .setHTML('<h3>Nurse</h3><p>Organisation: ' + feature.properties.organisation + '<br />Skills: ' + feature.properties.skills + '<br /></p>')
+          .setHTML(
+            '<h3>'+feature.properties.username+'</h3><p><h2><b>' + feature.properties.title + '</b></h2><br />Skills: ' + feature.properties.skills + '<br /><p>Organisation: ' + feature.properties.organisation  + '<br /></p>')
           .setLngLat(feature.geometry.coordinates)
           .addTo(map);
       });
