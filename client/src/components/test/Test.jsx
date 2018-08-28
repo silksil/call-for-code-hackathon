@@ -24,7 +24,7 @@ class Test extends Component {
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/stratostso/cjldjmln47dg72socw3b4jvdw',
+      style: 'mapbox://styles/stratostso/cjldjl0pa63to2sp6yl9cdk2j',
       center: [lng, lat],
       zoom
     });
