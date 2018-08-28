@@ -3,20 +3,20 @@ import React from 'react';
 export default function AuthBar(props) {
   return (
     <div className="sign-in-out-boxes">
-      <div className="sign-in-box">
+      <div className="sign-out-box">
         <button
           onClick={props.updatePage.bind(null, true)}
-          style={props.selectedPage ? { color: 'red' } : null}
+          className={props.selectedPage ? 'sign-in-box' : null}
           >
-          Sign In
+          SIGN IN
         </button>
       </div>
       <div className="sign-out-box">
         <button
           onClick={props.updatePage.bind(null, false )}
-          style={props.selectedPage ? null : { color: 'red' }}
+          className={props.selectedPage ? null : "sign-in-box"}
           >
-          Sign Up
+          SIGN UP
         </button>
       </div>
     </div>
