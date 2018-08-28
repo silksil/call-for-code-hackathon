@@ -4,6 +4,8 @@ import requireAuth from '../requireAuth';
 import ReactDOM from 'react-dom'
 import mapboxgl from 'mapbox-gl'
 
+import '../../style/map-styles.css';
+
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RyYXRvc3RzbyIsImEiOiJjamttZGUyMjMyYXd0M3BwOWhidDZ5am05In0.u6Lz6obeHCPxr8tKb9Km-g'; //Tso
 
 class Test extends Component {
@@ -11,9 +13,9 @@ class Test extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {
-      lng: 32.73,
+      lng: 32.74,
       lat: 39.97,
-      zoom: 12
+      zoom: 13
     };
   }
 
@@ -68,7 +70,7 @@ class Test extends Component {
                       "type": "Feature",
                       "geometry": {
                           "type": "Point",
-                          "coordinates": [32.745,39.94]
+                          "coordinates": [32.745,39.955]
                       },
                       "properties": {
                           "username": "Samara Morgan",
@@ -138,7 +140,7 @@ class Test extends Component {
                       "type": "Feature",
                       "geometry": {
                           "type": "Point",
-                          "coordinates": [32.733, 39.93]
+                          "coordinates": [32.733, 39.976]
                       },
                       "properties": {
                           "username":"Patrick Bateman",
@@ -152,7 +154,7 @@ class Test extends Component {
                       "type": "Feature",
                       "geometry": {
                           "type": "Point",
-                          "coordinates": [32.746, 39.936]
+                          "coordinates": [32.746, 39.966]
                       },
                       "properties": {
                           "username":"Stu Macher",
@@ -182,7 +184,7 @@ class Test extends Component {
         var popup = new mapboxgl.Popup({ offset: [0, -15] })
           .setLngLat(feature.geometry.coordinates)
           .setHTML(
-            '<h3>'+feature.properties.username+'</h3><p><h2><b>' + feature.properties.title + '</b></h2><br />Skills: ' + feature.properties.skills + '<br /><p>Organisation: ' + feature.properties.organisation  + '<br /></p>')
+            '<h3>'+feature.properties.username+'</h3><br /><p><h2><b>' + feature.properties.title + '</b></h2><br />Skills: ' + feature.properties.skills + '<br /><p>Organisation: ' + feature.properties.organisation  + '<br /></p>')
           .setLngLat(feature.geometry.coordinates)
           .addTo(map);
       });
@@ -207,9 +209,7 @@ class Test extends Component {
 
     return (
       <div>
-        <div className="inline-block absolute top left mt12 ml12 bg-darken75 color-white z1 py6 px12 round-full txt-s txt-bold">
-          <div>{`Longitude: ${lng} Latitude: ${lat} Zoom: ${zoom}`}</div>
-        </div>
+
         <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
       </div>
     );
