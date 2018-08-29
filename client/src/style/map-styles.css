@@ -24,7 +24,7 @@
 }
 
 .filter-group input[type=checkbox]+label {
-    background-color: #5C755E;
+    background-color: #2A2E43;
     display: block;
     cursor: pointer;
     padding: 10px;
@@ -32,7 +32,7 @@
 }
 
 .filter-group input[type=checkbox]+label {
-    background-color: #5C755E;
+    background-color: #2A2E43;
     text-transform: capitalize;
 }
 
@@ -43,7 +43,7 @@
 
 .filter-group input[type=checkbox]+label:hover,
 .filter-group input[type=checkbox]:checked+label {
-    background-color: #9C9F84;
+    background-color: #2A2E43;
     color: #FFFFFF;
     font-family: 'Arial';
 }
@@ -53,5 +53,6 @@
     background-color: #2A2E43;
     border-color: #A97D5D;
     box-shadow: 3px 3px 2px #2A2E43;
-    font-family: 'Arial';
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-weight: 600;
 }
