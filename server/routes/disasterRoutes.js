@@ -5,4 +5,10 @@ module.exports = (app) => {
 
     app.post('/api/disaster', disasterControllers.oneDisaster)
 
+    app.post('/api/notifications', disasterControllers.usersNotifications)
+
+    app.post('/api/chat', disasterControllers.usersChatMessages)
+
+    app.post('/api/map', disasterControllers.usersMap)
+
 }

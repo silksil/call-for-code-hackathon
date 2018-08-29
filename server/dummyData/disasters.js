@@ -1,4 +1,4 @@
-const dummyData = [
+const dummyDataDisasters = [
   {
     "id": 1,
     "active": true,
@@ -44,4 +44,4 @@ const dummyData = [
   }
 ]
 
-module.exports = dummyData;
+module.exports = dummyDataDisasters;

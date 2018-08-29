@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_DISASTERS, FETCH_DISASTER } from './types';
+import { FETCH_DISASTERS, FETCH_DISASTER, FETCH_NOTIFICATIONS, FETCH_CHAT_MESSAGES, FETCH_MAP } from './types';
 
 export const fetchDisasters  = () => async dispatch => {
   const response = await axios.get('/api/alldisasters');
@@ -12,4 +12,25 @@ export const fetchDisaster  = (id) => async dispatch => {
   const response = await axios.post(`/api/disaster`, {id: id});
 
   dispatch({ type: FETCH_DISASTER, payload: response.data })
+};
+
+export const fetchNotifications = (userId, disasterId) => async dispatch => {
+  const body = { userId: userId, disasterId: disasterId };
+  const response = await axios.post(`/api/notifications`, body);
+
+  dispatch({ type: FETCH_NOTIFICATIONS, payload: response.data })
+};
+
+export const fetchMap = (userId, disasterId) => async dispatch => {
+  const body = { userId: userId, disasterId: disasterId };
+  const response = await axios.post(`/api/map`, body);
+
+  dispatch({ type: FETCH_MAP, payload: response.data })
+};
+
+export const fetchChat = (userId, disasterId) => async dispatch => {
+  const body = { userId: userId, disasterId: disasterId };
+  const response = await axios.post(`/api/chat`, body);
+
+  dispatch({ type: FETCH_CHAT_MESSAGES, payload: response.data })
 };

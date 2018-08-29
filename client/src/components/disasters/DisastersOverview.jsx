@@ -21,8 +21,8 @@ class DisastersOverview extends Component {
   }
 
   renderContent(){
-    const allDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === false)
-    const usersDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === true)
+    const allDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === false);
+    const usersDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === true);
 
     if (this.state.showAllDisasters) {
       return (

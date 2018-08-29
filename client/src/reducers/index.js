@@ -2,9 +2,13 @@ import { combineReducers } from 'redux';
 import { reducer as reduxForm } from 'redux-form';
 import auth from './reducer_auth';
 import disasters from './reducer_disasters';
+import notifications from './reducer_notifications';
+import chatMessages from './reducer_chat_messages';
 
 export default combineReducers({
-  auth: auth,
+  auth,
   form: reduxForm,
-  disasters: disasters
+  disasters,
+  notifications,
+  chatMessages,
 });
