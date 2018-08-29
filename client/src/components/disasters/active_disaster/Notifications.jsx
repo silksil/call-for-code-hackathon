@@ -7,8 +7,6 @@ class Notifications extends Component {
     this.props.fetchNotifications();
   }
 
-
-
   render() {
     if (this.props.notifications.length === 0) {
       return <div className="loader"> loading</div>
