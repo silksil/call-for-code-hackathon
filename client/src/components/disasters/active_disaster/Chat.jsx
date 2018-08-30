@@ -18,8 +18,9 @@ class Notifications extends Component {
             <img className="user-image" src={chat.otherUserImage}/>
               <div className="chat-text">
                 {/* <p>{chat.otherUserName}</p> */}
-                <p>{chat.messages[0].sender}:</p>
-                <p>{chat.messages[0].message}</p>
+                <p id="chat-sender">{chat.messages[0].sender}:</p>
+                <p id="chat-message">{chat.messages[0].message}</p>
+                <hr/>
               </div>
             </li>
           );
