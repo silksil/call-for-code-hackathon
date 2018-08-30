@@ -122,3 +122,86 @@ input:focus {
   color:red;
   font-weight: bold;
 }
+
+/* notifications */
+
+.notifications {
+  padding: 10px;
+}
+
+.notification-card {
+  border-radius: 10px;
+  box-shadow: 1px 2px #455B63;
+  width: 350px;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.notification-card p {
+  padding-left: 10px;
+}
+
+.organization-image {
+  display: inline-block;
+  width: 40px;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.organization-name {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.time-posted {
+  position: absolute;
+  font-size: 10px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.message-image {
+  border-radius: 10px;
+}
+
+.responses {
+  font-size: 12px;
+  color: gray;
+  padding-top: 5px;
+}
+
+
+/* chat */
+
+.chat-card {
+  padding: 10px;
+}
+
+.chat-card li {
+  border-radius: 10px;
+  box-shadow: 1px 2px #455B63;
+  width: 350px;
+  height: 100%;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.chat-text {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.user-image {
+  display: inline-block;
+  width: 60px;
+  height: 100%;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
