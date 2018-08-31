@@ -16,7 +16,6 @@ import CreateProfile from './profile/CreateProfile';
 import DisastersOverview from './disasters/DisastersOverview';
 import ShowDisaster from './disasters/ShowDisaster';
 import ActiveDisasterOverview from './disasters/active_disaster/ActiveDisasterOverview';
-import Test from './test/Test';
 
 import '../style/main.css';
 
@@ -33,7 +32,6 @@ class App extends Component {
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/signin" component={SignIn} />
             <Route exact path="/signout" component={SignOut} />
-            <Route exact path="/feature" component={Test} />
             <Route exact path="/profile" component={CreateProfile} />
             <Route exact path="/disasters" component={DisastersOverview} />
             <Route path="/disasters/:id" component={ShowDisaster} />
