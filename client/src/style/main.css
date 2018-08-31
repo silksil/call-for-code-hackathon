@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-around;
   padding-bottom: 25px;
+  /* background-color: white; */
 }
 
 .boxes button {
@@ -32,6 +33,7 @@
   width: 100%;
   text-align: center;
   color: black;
+  background-color: white;
 }
 
 .unselected-box {
@@ -43,6 +45,7 @@
   width: 100%;
   text-align: center;
   color: lightgray;
+  background-color: white;
 }
 
 /* COLOURS */
@@ -55,14 +58,13 @@
 }
 
 /* SIZES TEXT */
-h1, .big{
+h1, .big {
   font-size: 24px;
 }
 
 h2, .medium {
   font-size: 16px;
 }
-
 
 h3, .small {
   font-size: 14px;
