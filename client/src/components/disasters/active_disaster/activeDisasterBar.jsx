@@ -4,18 +4,18 @@ export default function activeDisasterBar(props) {
   console.log(props)
   const tabs = ['Notifications', 'Map', 'Chat'];
   return (
-    <ul className='group'>
+    <div className='boxes'>
       {tabs.map(tab => {
         return (
-          <li
+          <button
             key={tab}
-            style={tab === props.selectedTab ? { color: 'red' } : null}
+            className={tab === props.selectedTab ? 'selected-box' : 'unselected-box'}
             onClick={props.updateTab.bind(null, tab )}
             >
             {tab}
-          </li>
+          </button>
         );
       })}
-    </ul>
+    </div>
   );
 }

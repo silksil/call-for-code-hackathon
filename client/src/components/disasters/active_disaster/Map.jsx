@@ -10,7 +10,7 @@ class Notifications extends Component {
   render() {
     return (
       <div>
-        Notifications
+       Map
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchNotifications} from'../../../actions/action_disasters';
+import { fetchNotifications } from '../../../actions/action_disasters';
 
 class Notifications extends Component {
   componentDidMount() {
@@ -9,19 +9,22 @@ class Notifications extends Component {
 
   render() {
     if (this.props.notifications.length === 0) {
-      return <div className="loader"> loading</div>
+      return <div className="loader">loading</div>
     }
     return (
       <ul className='notifications'>
         {this.props.notifications.map(notifications => {
           return (
             <li key={notifications.id}>
-              <div className="">
-                <img className="" src={notifications.organizationImage}/>
-                <p>{notifications.organization}</p>
+              <div className="notification-card">
+                <img className="organization-image" src={notifications.organizationImage} />
+                <div className="organization-name">
+                <p> {notifications.organization}</p>
+                <p className="time-posted"> 2 min ago</p>
+                </div>
                 <p>{notifications.message}</p>
-                  <img className="" src={notifications.messageImage}/>
-                <p>{notifications.responses}</p>
+                <img className="message-image" src={notifications.messageImage} />
+                <p className="responses">{notifications.responses} [Icon]</p> 
               </div>
             </li>
           );

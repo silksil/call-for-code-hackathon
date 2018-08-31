@@ -11,15 +11,16 @@ class Notifications extends Component {
       return <div className="loader"> loading</div>
     }
     return (
-      <ul className='chat'>
+      <ul className='chat-card'>
         {this.props.chatMessages.map(chat => {
           return (
             <li key={chat.id}>
-              <div className="">
-                <p>{chat.otherUserName}</p>
-                <img className="" src={chat.otherUserImage}/>
-                <p>{chat.messages[0].sender}:</p>
-                <p>{chat.messages[0].message}</p>
+            <img className="user-image" src={chat.otherUserImage}/>
+              <div className="chat-text">
+                {/* <p>{chat.otherUserName}</p> */}
+                <p id="chat-sender">{chat.messages[0].sender}:</p>
+                <p id="chat-message">{chat.messages[0].message}</p>
+                <hr/>
               </div>
             </li>
           );
