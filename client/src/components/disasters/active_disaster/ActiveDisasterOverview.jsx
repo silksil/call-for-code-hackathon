@@ -38,7 +38,9 @@ class ActiveDisasterOverview extends Component {
           selectedTab={this.state.showTab}
           updateTab={this.updateTab}
         />
+        <div className='selected-wrapper'>
           {this.renderContent()}
+        </div>
       </div>
     )
   }

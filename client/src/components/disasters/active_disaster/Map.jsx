@@ -293,7 +293,7 @@ class Map extends Component {
     const { lng, lat, zoom } = this.state;
 
     return (
-      <div>
+      <div className="">
         <div>Icons made by
             <a href="https://www.flaticon.com/authors/freepik" title="Nurse">Nurse</a> from
             <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
@@ -306,8 +306,10 @@ class Map extends Component {
             <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
                 target="_blank">CC 3.0 BY</a>
         </div>
-        <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
-        <nav id='filter-group' className='filter-group'></nav>
+        <div>
+          <div ref={el => this.mapContainer = el} className="absolute top left bottom map-wrapper" />
+          <nav id='filter-group' className='filter-group'></nav>
+        </div>
       </div>
     );
   }
