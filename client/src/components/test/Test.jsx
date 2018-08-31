@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import requireAuth from '../requireAuth';
+
 import ReactDOM from 'react-dom'
-import { fetchMap} from'../../../actions/action_disasters';
 import mapboxgl from 'mapbox-gl'
-import '../../../style/map-styles.css';
+
+import '../../style/map-styles.css';
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RyYXRvc3RzbyIsImEiOiJjamttZGUyMjMyYXd0M3BwOWhidDZ5am05In0.u6Lz6obeHCPxr8tKb9Km-g';
 
-class Map extends Component {
+class Test extends Component {
+
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -18,9 +21,10 @@ class Map extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchMap();
     const { lng, lat, zoom } = this.state;
+
     const filterGroup = document.getElementById('filter-group');
+
     const map = new mapboxgl.Map({
       container: this.mapContainer,
       style: 'mapbox://styles/stratostso/cjldjl0pa63to2sp6yl9cdk2j',
@@ -293,11 +297,7 @@ class Map extends Component {
     const { lng, lat, zoom } = this.state;
 
     return (
-      <div className="">
-        <div>
-          <div ref={el => this.mapContainer = el} className="map-wrapper" />
-          <nav id='filter-group' className='filter-group'></nav>
-        </div>
+      <div>
         <div>Icons made by
             <a href="https://www.flaticon.com/authors/freepik" title="Nurse">Nurse</a> from
             <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
@@ -310,10 +310,11 @@ class Map extends Component {
             <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
                 target="_blank">CC 3.0 BY</a>
         </div>
-
+        <div ref={el => this.mapContainer = el} className="absolute top right left bottom" />
+        <nav id='filter-group' className='filter-group'></nav>
       </div>
     );
   }
 }
 
-export default connect(null, { fetchMap })(Map);
+export default Test;
