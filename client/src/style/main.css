@@ -17,7 +17,6 @@
   display: flex;
   justify-content: space-around;
   padding-bottom: 25px;
-  /* background-color: white; */
 }
 
 .boxes button {
@@ -37,10 +36,6 @@
 }
 
 .unselected-box {
-  /* background-image: linear-gradient(to right, rgb(82, 62, 255) 25%, rgb(69, 87, 254) 25%, rgb(69, 87, 254) 50%, rgb(42, 129, 251) 50%, rgb(42, 129, 251) 75%, rgb(52, 193, 218) 75%);
-  background-size: 100% 4px;
-  background-repeat: no-repeat;
-  background-position: 0% 100%; */
   border: lightgray 0.1px 0px 0px 0px solid;
   width: 100%;
   text-align: center;
@@ -181,12 +176,8 @@ input:focus {
 }
 
 .chat-card li {
-  /* border: gray 1px solid; */
-  /* border-radius: 10px; */
-  /* box-shadow: 1px 2px #455B63; */
   width: 350px;
   height: 100%;
-  /* padding: 10px; */
   margin-bottom: 20px;
 }
 
