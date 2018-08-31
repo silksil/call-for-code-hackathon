@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import ActiveDisasterBar from './activeDisasterBar';
 import Chat from './Chat';
 import Map from './Map';
@@ -38,7 +37,9 @@ class ActiveDisasterOverview extends Component {
           selectedTab={this.state.showTab}
           updateTab={this.updateTab}
         />
+        <div className='selected-wrapper'>
           {this.renderContent()}
+        </div>
       </div>
     )
   }

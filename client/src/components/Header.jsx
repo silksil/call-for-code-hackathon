@@ -25,7 +25,9 @@ class Header extends Component {
   render() {
     return (
       <div className="nav">
-        <Link to={'/'}> FirstResponder </Link>
+        <Link to={'/'}>
+          <img id="nav-icon" src={require('../style/icons/menu.svg')} alt="nav-icon" />
+        </Link>
       </div>
     );
   }

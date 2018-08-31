@@ -1,4 +1,16 @@
 .nav {
    height: 50px;
+<<<<<<< HEAD
    background-color: white;
+=======
+   position: relative;
+   color: white;
+}
+
+#nav-icon {
+  width: 25px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+>>>>>>> fixMap
 }

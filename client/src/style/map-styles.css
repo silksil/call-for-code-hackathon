@@ -1,11 +1,15 @@
+.map-wrapper{
+  width: 100%;
+  height: 547px;
+}
+
 .filter-group {
     font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 600;
     position: absolute;
-    top: 10px;
+    top: 130px;
     right: 10px;
     z-index: 1;
-    border-radius: 3px;
     width: 120px;
     color: #fff;
 }
