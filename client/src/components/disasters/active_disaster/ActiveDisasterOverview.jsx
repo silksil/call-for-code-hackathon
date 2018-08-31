@@ -31,7 +31,6 @@ class ActiveDisasterOverview extends Component {
     return <Chat/>;
   }
 
-
   render() {
     return (
       <div>

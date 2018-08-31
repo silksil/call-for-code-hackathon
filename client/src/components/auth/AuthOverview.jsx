@@ -26,7 +26,6 @@ class Auth extends Component {
     return <SignUp/>
   }
 
-
   render() {
     return (
       <div>

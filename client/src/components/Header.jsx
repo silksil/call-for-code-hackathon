@@ -20,8 +20,8 @@ class Header extends Component {
         </div>
       )
     }
-
   }
+  
   render() {
     return (
       <div className="nav-wrapper">
