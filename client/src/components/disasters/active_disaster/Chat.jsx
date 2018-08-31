@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchChat} from'../../../actions/action_disasters';
+import '../../../style/chat.css';
+
 
 class Notifications extends Component {
   componentDidMount() {
