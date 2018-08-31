@@ -1,6 +1,7 @@
 disasterDummyData = require('../dummyData/disasters');
 messagesDummyData = require('../dummyData/messages');
 notificicationsDummyData = require('../dummyData/notifications');
+mapDummyData = require('../dummyData/map');
 
 exports.allDisasters = (req, res)=> {
   res.send(disasterDummyData);
@@ -26,6 +27,5 @@ exports.usersChatMessages = (req, res)=> {
 }
 
 exports.usersMap = (req, res)=> {
-  console.log("test map")
-  res.send("jo");
+  res.send(mapDummyData);
 }
