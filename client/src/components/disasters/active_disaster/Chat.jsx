@@ -10,7 +10,10 @@ class Notifications extends Component {
     if (this.props.chatMessages.length === 0) {
       return <div className="loader"> loading</div>
     }
+
     return (
+      <div> <img className="search-icon" src={require('../../../style/icon/search-icon.png')} />
+      
       <ul className='chat-card'>
         {this.props.chatMessages.map(chat => {
           return (
@@ -26,6 +29,7 @@ class Notifications extends Component {
           );
         })}
       </ul>
+      </div>
     )
   }
 }

@@ -24,7 +24,7 @@ class Notifications extends Component {
                 </div>
                 <p>{notifications.message}</p>
                 <img className="message-image" src={notifications.messageImage} />
-                <p className="responses">{notifications.responses} [Icon]</p> 
+                <p className="responses">{notifications.responses} <img className="message-icon" src={require('../../../style/icon/message-icon.png')} /></p> 
               </div>
             </li>
           );
