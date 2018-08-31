@@ -2,19 +2,19 @@ import React from 'react';
 
 export default function AuthBar(props) {
   return (
-    <div className="sign-in-out-boxes">
-      <div className="sign-out-box">
+    <div className="boxes">
+      <div className="unselected-box">
         <button
           onClick={props.updatePage.bind(null, true)}
-          className={props.selectedPage ? 'sign-in-box' : null}
+          className={props.selectedPage ? 'selected-box' : null}
           >
           SIGN IN
         </button>
       </div>
-      <div className="sign-out-box">
+      <div className="unselected-box">
         <button
           onClick={props.updatePage.bind(null, false )}
-          className={props.selectedPage ? null : "sign-in-box"}
+          className={props.selectedPage ? null : "selected-box"}
           >
           SIGN UP
         </button>
