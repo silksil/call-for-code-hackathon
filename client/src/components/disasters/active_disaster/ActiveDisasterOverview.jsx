@@ -16,7 +16,7 @@ class ActiveDisasterOverview extends Component {
     this.setState({ showTab: tab });
   }
 
-  renderContent(){
+  renderContent() {
     const tab  = this.state.showTab;
     if (tab === 'Notifications') {
       return (
