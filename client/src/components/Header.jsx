@@ -24,9 +24,8 @@ class Header extends Component {
   }
   render() {
     return (
-      <div className="nav-wrapper">
+      <div className="nav">
         <Link to={'/'}> FirstResponder </Link>
-        {this.renderLinks()}
       </div>
     );
   }
