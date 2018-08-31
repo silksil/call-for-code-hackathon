@@ -15,7 +15,7 @@ export default function selectedDisasters(props) {
             <li key={disaster.id}>
                 <Link to={`/${link}/${disaster.id}`}>
                   <div className="card-container">
-                    <img className="card-image" src="//placehold.it/400"/>
+                    <img className="card-image" src="//placehold.it/400" alt="disaster-{disaster.name}"/>
                     <div className="card-disaster-info">
                         <div className="card-disaster-level">
                           <p className="text-disaster-level"> {disaster.disasterLevel}</p>

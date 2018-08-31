@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import ReactSwipe from 'react-swipe';
 import { Link } from 'react-router-dom';
 import '../style/landing.css';

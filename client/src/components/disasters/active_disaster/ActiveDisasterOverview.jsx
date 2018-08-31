@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import ActiveDisasterBar from './activeDisasterBar';
 import Chat from './Chat';
 import Map from './Map';

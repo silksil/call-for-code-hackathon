@@ -1,3 +1,11 @@
 .nav {
    height: 50px;
+   position: relative;
+}
+
+#nav-icon {
+  width: 25px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
 }
