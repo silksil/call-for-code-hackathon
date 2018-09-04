@@ -2,7 +2,6 @@ import React from 'react';
 import './SharedSelectTab.css';
 
 export default function SharedSelectTab (props) {
-  console.log(props)
   return (
     <div className='boxes'>
       {props.tabs.map(tab => {

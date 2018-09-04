@@ -10,6 +10,11 @@
 .boxes button {
   padding: 10px;
   text-transform: uppercase;
+  border-width: 1px;
+  border-color: rgb(241, 244, 244);
+  text-align: center;
+  background-color: white;
+  width: 100%;
 }
 
 .selected-box {
@@ -17,17 +22,10 @@
   background-size: 100% 6px;
   background-repeat: no-repeat;
   background-position: 0% 100%;
-  border: lightgray 0.1px 0.1px 0.1px 0.1px solid;
   width: 100%;
-  text-align: center;
   color: black;
-  background-color: white;
 }
 
 .unselected-box {
-  border: lightgray 0.1px 0px 0px 0px solid;
-  width: 100%;
-  text-align: center;
   color: lightgray;
-  background-color: white;
 }

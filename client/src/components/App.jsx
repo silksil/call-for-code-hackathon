@@ -17,7 +17,7 @@ import OverviewDisasters from './overview_disasters/OverviewDisasters';
 import OverviewDisastersSelected from './overview_disasters/OverviewDisastersSelected';
 import EnrolledDisasterOverview from './enrolled_disaster/EnrolledDisasterOverview';
 
-import '../style/main.css';
+import './App.css';
 
 class App extends Component {
 

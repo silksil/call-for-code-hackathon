@@ -1,0 +1,80 @@
+/* OverviewDisastersSelected */
+.image-card-container{
+  margin-top: 20px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-picture{
+  position: absolute;
+  height: 200px;
+  width: 90%;
+  margin: 0px auto;
+  border-radius: 20px;
+  filter: brightness(80%);
+}
+
+.image-picture:hover {
+  filter: brightness(100%);
+}
+
+.image-info{
+  width: 250px;
+  height: 100px;
+  position: relative;
+  left: -10px;
+  top: 50px;
+  color: white;
+}
+
+.image-disaster-level-card {
+  text-transform: uppercase;
+  width: 100px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.severe{
+  background-color: #FF4F9A;
+}
+
+.moderate{
+  background-color: #FFB900;
+}
+
+/* OverviewDisasterTab */
+.card {
+  padding: 20px;
+  background-color: white;
+  margin: 15px 0px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 3px 29px 5px rgba(0,0,0,0.03);
+  -moz-box-shadow: 0px 3px 29px 5px rgba(0,0,0,0.03);
+  box-shadow: 0px 3px 29px 5px rgba(0,0,0,0.03);
+}
+
+.card-line{
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;
+  background-color: #f1f1f1;
+  height: 1px;
+  margin: 5px 0px;
+}
+.dot {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block
+}
+
+.dot-yes {
+  display: inline-block;
+}
+
+.dot-no {
+  background-color: green;
+}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import SharedSelectTab from '../shared/select_tab/SharedSelectTab';
-import OverviewDisastersSelected from './OverviewDisastersSelected'
+import OverviewDisastersTab from './OverviewDisastersTab';
 import { fetchDisasters } from'../../store/actions/action_disasters';
-import '../../style/disasters.css';
+import './OverviewDisasters.css';
 
 class DisastersOverview extends Component {
   constructor(props) {
@@ -26,15 +26,15 @@ class DisastersOverview extends Component {
 
     if (this.state.selectedTab === 'all disasters') {
       return (
-        <OverviewDisastersSelected
-          selectedPage={this.state.showAllDisasters}
+        <OverviewDisastersTab
+          selectedPage={this.state.selectedTab}
           disasters={allDisasters}
         />
       )
     }
     return (
-      <OverviewDisastersSelected
-        selectedPage={this.state.showAllDisasters}
+      <OverviewDisastersTab
+        selectedPage={this.state.selectedTab}
         disasters={usersDisasters}
       />
     )

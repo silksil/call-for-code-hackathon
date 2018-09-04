@@ -14,7 +14,7 @@ class Notifications extends Component {
     }
 
     return (
-      <div> <img className="search-icon" src={require('../../public/icons/search-icon.png')} />
+      <div> <img className="search-icon" src={require('../../assets/icons/search-icon.png')} />
 
       <ul className='chat-card'>
         {this.props.chatMessages.map(chat => {

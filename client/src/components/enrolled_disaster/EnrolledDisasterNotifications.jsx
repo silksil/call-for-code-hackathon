@@ -25,6 +25,7 @@ class Notifications extends Component {
                 </div>
                 <p>{notifications.message}</p>
                 <img className="message-image" src={notifications.messageImage} />
+                // <p className="responses">{notifications.responses} <img className="message-icon" src={require('../../assets/icons/message-icon.png')} /></p>
               </div>
             </li>
           );
@@ -37,7 +38,6 @@ class Notifications extends Component {
 function mapStateToProps(state) {
   return { notifications: state.notifications };
 }
-// <p className="responses">{notifications.responses} <img className="message-icon" src={require('../public/icons/message-icon.png')} /></p>
 
 
 export default connect(mapStateToProps, { fetchNotifications })(Notifications);

@@ -26,7 +26,7 @@ class Header extends Component {
     return (
       <div className="nav">
         <Link to={'/'}>
-          <img id="nav-icon" src={require('../../public/icons/menu-burger.png')} alt="nav-icon" />
+          <img id="nav-icon" src={require('../../assets/icons/menu-burger.png')} alt="nav-icon" />
         </Link>
       </div>
     );

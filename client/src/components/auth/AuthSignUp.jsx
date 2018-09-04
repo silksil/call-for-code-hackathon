@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { signUp } from '../../actions/action_auth'
+import { signUp } from '../../store/actions/action_auth'
 
 class AuthSignUp extends Component {
   onSubmit = (formProps) => {
@@ -26,7 +26,7 @@ class AuthSignUp extends Component {
   						component="input"
 							autoComplete="none"
 							placeholder="Email"
-              className="input-light"
+              className="input-light shadow"
   					/>
   				</fieldset>
   				<fieldset>
@@ -37,7 +37,7 @@ class AuthSignUp extends Component {
   						component="input"
 							autoComplete="none"
 							placeholder="Password"
-              className="input-light"
+              className="input-light shadow"
   					/>
   				</fieldset>
           <div className="warning-text"> {this.props.errorMessage}</div>
