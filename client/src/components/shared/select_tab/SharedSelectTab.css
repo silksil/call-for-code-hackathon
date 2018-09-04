@@ -1,0 +1,33 @@
+.boxes {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.03);
+  -moz-box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.03);
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.03);
+}
+
+.boxes button {
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.selected-box {
+  background-image: linear-gradient(to right, rgb(82, 62, 255) 25%, rgb(69, 87, 254) 25%, rgb(69, 87, 254) 50%, rgb(42, 129, 251) 50%, rgb(42, 129, 251) 75%, rgb(52, 193, 218) 75%);
+  background-size: 100% 6px;
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  border: lightgray 0.1px 0.1px 0.1px 0.1px solid;
+  width: 100%;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+.unselected-box {
+  border: lightgray 0.1px 0px 0px 0px solid;
+  width: 100%;
+  text-align: center;
+  color: lightgray;
+  background-color: white;
+}

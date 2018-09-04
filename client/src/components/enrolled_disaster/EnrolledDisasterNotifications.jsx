@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchNotifications } from '../../../actions/action_disasters';
-import '../../../style/notifications.css';
+import { fetchNotifications } from '../../store/actions/action_disasters';
+import './EnrolledDisaster.css';
 
 class Notifications extends Component {
   componentDidMount() {
@@ -25,7 +25,6 @@ class Notifications extends Component {
                 </div>
                 <p>{notifications.message}</p>
                 <img className="message-image" src={notifications.messageImage} />
-                <p className="responses">{notifications.responses} <img className="message-icon" src={require('../../../style/icon/message-icon.png')} /></p> 
               </div>
             </li>
           );
@@ -38,6 +37,7 @@ class Notifications extends Component {
 function mapStateToProps(state) {
   return { notifications: state.notifications };
 }
+// <p className="responses">{notifications.responses} <img className="message-icon" src={require('../public/icons/message-icon.png')} /></p>
 
 
 export default connect(mapStateToProps, { fetchNotifications })(Notifications);

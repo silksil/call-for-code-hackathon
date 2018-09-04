@@ -1,39 +1,42 @@
 import React, { Component } from 'react';
-import AuthBar from './authBar';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
-
+import SharedSelectTab from '../shared/select_tab/SharedSelectTab';
+import AuthSignIn from './AuthSignIn';
+import AuthSignUp from './AuthSignUp';
+import './Auth.css';
 
 class Auth extends Component {
   constructor(props) {
     super(props);
-    this.state = { showSignIn: true };
-    this.updatePage = this.updatePage.bind(this);
+    this.state = { selectedTab: 'sign in' };
+    this.updateTab = this.updateTab.bind(this);
   }
 
-  updatePage(page) {
-    this.setState({ showSignIn: page });
+  updateTab(tab) {
+    this.setState({ selectedTab: tab });
   }
 
   renderContent(){
-    if (this.state.showSignIn ) {
+    if (this.state.selectedTab === 'sign in') {
       return (
         <div>
-          <SignIn/>
+          <AuthSignIn/>
         </div>
       )
     }
-    return <SignUp/>
+    return <AuthSignUp/>
   }
 
   render() {
     return (
       <div>
-        <AuthBar
-          selectedPage={this.state.showSignIn}
-          updatePage={this.updatePage}
+        <SharedSelectTab
+          selectedTab={this.state.selectedTab}
+          updateTab={this.updateTab}
+          tabs={['sign in', 'sign out']}
         />
-        {this.renderContent()}
+        <div className="container-90">
+          {this.renderContent()}
+        </div>
       </div>
     )
   }

@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import ActiveDisasterBar from './activeDisasterBar';
-import Chat from './Chat';
-import Map from './Map';
-import Notifications from './Notifications';
+import SharedSelectTab from '../shared/select_tab/SharedSelectTab';
+import Chat from './EnrolledDisasterChat';
+import Map from './EnrolledDisasterMap';
+import Notifications from './EnrolledDisasterNotifications';
 
 class ActiveDisasterOverview extends Component {
   constructor(props) {
     super(props);
-    this.state = { showTab: 'Notifications' };
+    this.state = { selectedTab: 'notifications' };
     this.updateTab = this.updateTab.bind(this);
   }
 
   updateTab(tab) {
-    this.setState({ showTab: tab });
+    this.setState({ selectedTab: tab });
   }
 
   renderContent() {
-    const tab  = this.state.showTab;
-    if (tab === 'Notifications') {
+    const tab  = this.state.selectedTab;
+    if (tab === 'notifications') {
       return (
       <Notifications/>
       );
     }
-    if (tab === 'Map') {
+    if (tab === 'map') {
       return (
       <Map/>
       );
@@ -33,9 +33,10 @@ class ActiveDisasterOverview extends Component {
   render() {
     return (
       <div>
-        <ActiveDisasterBar
-          selectedTab={this.state.showTab}
+        <SharedSelectTab
+          selectedTab={this.state.selectedTab}
           updateTab={this.updateTab}
+          tabs={['notifications', 'map', 'chat']}
         />
         <div className='selected-wrapper'>
           {this.renderContent()}

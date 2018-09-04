@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import '../style/header.css';
+import './Header.css';
 
 class Header extends Component {
   renderLinks(){
@@ -21,12 +21,12 @@ class Header extends Component {
       )
     }
   }
-  
+
   render() {
     return (
       <div className="nav">
         <Link to={'/'}>
-          <img id="nav-icon" src={require('../style/icons/menu.svg')} alt="nav-icon" />
+          <img id="nav-icon" src={require('../../public/icons/menu-burger.png')} alt="nav-icon" />
         </Link>
       </div>
     );

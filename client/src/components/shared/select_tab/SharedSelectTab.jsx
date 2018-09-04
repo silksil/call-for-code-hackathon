@@ -1,11 +1,11 @@
 import React from 'react';
+import './SharedSelectTab.css';
 
-export default function activeDisasterBar(props) {
+export default function SharedSelectTab (props) {
   console.log(props)
-  const tabs = ['Notifications', 'Map', 'Chat'];
   return (
     <div className='boxes'>
-      {tabs.map(tab => {
+      {props.tabs.map(tab => {
         return (
           <button
             key={tab}

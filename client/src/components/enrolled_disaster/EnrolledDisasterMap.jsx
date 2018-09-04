@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactDOM from 'react-dom'
-import { fetchMap} from'../../../actions/action_disasters';
+import { fetchMap} from'../../store/actions/action_disasters';
 import mapboxgl from 'mapbox-gl'
-import '../../../style/map-styles.css';
+import './EnrolledDisaster.css';
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RyYXRvc3RzbyIsImEiOiJjamttZGUyMjMyYXd0M3BwOWhidDZ5am05In0.u6Lz6obeHCPxr8tKb9Km-g';
 

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import DisasterBar from './disasterBar';
-import SelectedDisasters from './selectedDisasters.jsx'
-import { fetchDisasters } from'../../actions/action_disasters';
+import SharedSelectTab from '../shared/select_tab/SharedSelectTab';
+import OverviewDisastersSelected from './OverviewDisastersSelected'
+import { fetchDisasters } from'../../store/actions/action_disasters';
 import '../../style/disasters.css';
 
 class DisastersOverview extends Component {
   constructor(props) {
     super(props);
-    this.state = { showAllDisasters: true };
-    this.updatePage = this.updatePage.bind(this);
+    this.state = { selectedTab: 'my involvements' };
+    this.updateTab = this.updateTab.bind(this);
   }
 
-  updatePage(boolean) {
-    this.setState({ showAllDisasters: boolean });
+  updateTab(tab) {
+    this.setState({ selectedTab: tab });
   }
 
   componentDidMount() {
@@ -24,16 +24,16 @@ class DisastersOverview extends Component {
     const allDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === false);
     const usersDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === true);
 
-    if (this.state.showAllDisasters) {
+    if (this.state.selectedTab === 'all disasters') {
       return (
-        <SelectedDisasters
+        <OverviewDisastersSelected
           selectedPage={this.state.showAllDisasters}
           disasters={allDisasters}
         />
       )
     }
     return (
-      <SelectedDisasters
+      <OverviewDisastersSelected
         selectedPage={this.state.showAllDisasters}
         disasters={usersDisasters}
       />
@@ -43,9 +43,10 @@ class DisastersOverview extends Component {
   render() {
     return (
       <div>
-        <DisasterBar
-          selectedPage={this.state.showAllDisasters}
-          updatePage={this.updatePage}
+        <SharedSelectTab
+          selectedTab={this.state.selectedTab}
+          updateTab={this.updateTab}
+          tabs={['my involvements', 'all disasters']}
         />
         {this.renderContent()}
       </div>

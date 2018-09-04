@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDisaster } from'../../actions/action_disasters';
+import { fetchDisaster } from'../../store/actions/action_disasters';
 
 class ShowDisaster extends Component {
   componentDidMount() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactSwipe from 'react-swipe';
 import { Link } from 'react-router-dom';
-import '../style/landing.css';
+import './Home.css';
 
 class Landing extends Component {
 

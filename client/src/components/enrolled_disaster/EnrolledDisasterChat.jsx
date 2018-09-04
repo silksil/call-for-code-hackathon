@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchChat} from'../../../actions/action_disasters';
-import '../../../style/chat.css';
+import { fetchChat} from'../../store/actions/action_disasters';
+import './EnrolledDisaster.css';
 
 
 class Notifications extends Component {
@@ -14,8 +14,8 @@ class Notifications extends Component {
     }
 
     return (
-      <div> <img className="search-icon" src={require('../../../style/icon/search-icon.png')} />
-      
+      <div> <img className="search-icon" src={require('../../public/icons/search-icon.png')} />
+
       <ul className='chat-card'>
         {this.props.chatMessages.map(chat => {
           return (
