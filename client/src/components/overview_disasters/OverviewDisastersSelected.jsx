@@ -28,38 +28,43 @@ class OverviewDisasterSelected extends Component {
         <div className="card">
           <h3 className="card-title">Description</h3>
           <hr className="card-line"/>
-          <p>{disaster.description}</p>
+          <p className="grey">{disaster.description}</p>
         </div>
-        <div className="card">
-          <h3 className="card-title">Location</h3>
-          <hr className="card-line"/>
-          <p>{disaster.description}</p>
+        <div className="card" id="card-map">
+          <div id="card-map-title">
+            <h3 className="card-title">Location</h3>
+            <hr className="card-line"/>
+          </div>
+          <img id="map" src={require('../../assets/images/map.png')} alt="map" />
+          <div id='map-filler'> </div>
         </div>
         <div className="card">
           <h3 className="card-title">Should you go there to help?</h3>
           <hr className="card-line"/>
-          {disaster.advice ? <div><span class="dot dot-yes"></span> <p>'Yes'</p> </div> : <div><span class="dot dot-no"></span> <p>'No'</p> </div>}
+          {disaster.advice ? <div><span className="dot dot-yes"></span><p>Yes</p> </div> : <div><span className="dot dot-no"></span><p>No</p></div>}
+          <p className="grey">{disaster.goThereComment}</p>
         </div>
         <div className="card">
+          <h3 className="card-title">How can you help</h3>
           <hr className="card-line"/>
-          <h3 className="card-title">How can I help?</h3>
-          <div>
-            <span>icon</span>
-            <p>Donate money</p>
-          </div>
-          <div>
-            <span>icon</span>
-            <p>Donate supplies</p>
-          </div>
-          <div>
-            <span>icon</span>
-            <p>Help on Sight</p>
+          <div className='help-options'>
+            <div className='icon-box'>
+              <img className="help-icon" src={require('../../assets/icons/money.png')} alt="donate money" />
+              <p className="grey help-text">Donate Money</p>
+            </div>
+            <div className='icon-box'>
+              <img className="help-icon" src={require('../../assets/icons/on-sight.png')} alt="help on sight" />
+              <p className="grey help-text">Help on Sight</p>
+            </div>
+            <div className='icon-box'>
+              <img className="help-icon" src={require('../../assets/icons/supplies.png')} alt="donate money" />
+              <p className="grey help-text">Donate Supplies</p>
+            </div>
           </div>
         </div>
       </div>
     );
   }
-
 }
 
 function mapStateToProps( { disasters }, ownProps) {

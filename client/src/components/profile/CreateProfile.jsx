@@ -20,15 +20,21 @@ class CreateProfile extends Component {
      const { handleSubmit} = this.props;
      const onOffSwitch = ['On', 'Off']
      return (
-       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-         <Field name="firstName" label="First Name" component={InputField}/>
-         <Field name="lastName" label="Last Name" component={InputField}/>
-         <Field name="email" label="Email" component={InputField}/>
-         <Field name="notification" label="Disaster Notifications" component={Switch} data={onOffSwitch}/>
-         <Field name="nationality" label="Nationality" component={DropDownSelector} data={nationalitiesList}/>
-         <FieldArray name="skills" component={Skills}/>
-       <button type="submit"> Submit </button>
-      </form>
+      <div>
+        <div className='header-div'>
+          <h1 className='extra-big'> Create Profile </h1>
+        </div>
+        <div className='container-90'>
+         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+           <Field name="firstName" label="First Name" component={InputField} className={'input-light'}/>
+           <Field name="lastName" label="Last Name" component={InputField} className={'input-light'}/>
+           <Field name="notification" label="Notifications" component={Switch} data={onOffSwitch}/>
+           <Field name="nationality" label="Nationality" component={DropDownSelector} data={nationalitiesList}/>
+           <FieldArray name="skills" component={Skills}/>
+         <button type="submit"> Submit </button>
+        </form>
+      </div>
+    </div>
    );
   }
 }
@@ -41,7 +47,6 @@ function validate(values) {
   if (!values.lastName) {
     errors.lastName = 'Enter a last name';
   }
-  errors.email = validateEmails(values.email || '');
   if (!values.nationality) {
     errors.nationality = 'Enter a nationality';
   }

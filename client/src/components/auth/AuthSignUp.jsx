@@ -26,7 +26,7 @@ class AuthSignUp extends Component {
   						component="input"
 							autoComplete="none"
 							placeholder="Email"
-              className="input-light shadow"
+              className="input-light"
   					/>
   				</fieldset>
   				<fieldset>
@@ -37,7 +37,7 @@ class AuthSignUp extends Component {
   						component="input"
 							autoComplete="none"
 							placeholder="Password"
-              className="input-light shadow"
+              className="input-light"
   					/>
   				</fieldset>
           <div className="warning-text"> {this.props.errorMessage}</div>

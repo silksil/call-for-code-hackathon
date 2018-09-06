@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../store/actions';
 
 // No Auth Required
-import Header from './header/Header';
+import Nav from './nav/Nav';
 import Home from './home/Home';
 import Auth from './auth/AuthOverview';
 import AuthSignUp from './auth/AuthSignUp';
@@ -26,7 +26,7 @@ class App extends Component {
       <div id="wrapper">
         <BrowserRouter>
           <div>
-            <Header/>
+            <Nav/>
             <Route exact path="/" component={Home} />
             <Route exact path="/auth" component={Auth} />
             <Route exact path="/signup" component={AuthSignUp} />
