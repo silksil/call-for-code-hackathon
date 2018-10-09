@@ -39,4 +39,4 @@ The timeline and chat functionality uses dummy data and is not fully functional.
 <img align="center" src="./gifActiveDisaster.gif" width="30%" alt="activeDisaster"/>
 
 ### Run the app
-Download the repository and run `npm run start`.
+Download the repository, install all dependencies and run `npm run start`.
