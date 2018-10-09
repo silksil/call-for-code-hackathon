@@ -24,19 +24,19 @@ The app has been programmed together with [Stratos Tsompanopoulos](https://www.l
 Given time constraints not all functionalities that we had in mind were eventually implemented in the final app that we submitted. The following functionalities were included in our final app:
 
 ##### Login system
-![loginSystem](./gifLogin.gif)
+<img align="center" src="./gifLogin.gif" width="30%" alt="loginSystem"/>
 
 ##### Create profile
-![createProfile](./gifCreateProfile.gif)
-
+<img align="center" src="./gifCreateProfile.gif" width="30%" alt="createProfile"/>
 
 ##### Overview of the disasters throughout the world and the one you 'subscribed' to
-![disastersOverview](./gifDisasters.gif)
+<img align="center" src="./gifDisasters.gif" width="30%" alt="disastersOverview"/>
 
 
 ##### Timeline, map, chat
-![activeDisaster](./activeDisaster.gif)
-The timeline and chat used dummy data and was not fully functional.
+<img align="center" src="./gifActiveDisaster.gif" width="30%" alt="activeDisaster"/>
+
+The timeline and chat used dummy data and is not fully functional.
 
 ### Run the app?
 Download the repository and run `npm run start`.
