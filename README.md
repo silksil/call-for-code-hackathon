@@ -34,7 +34,8 @@ Given time constraints not all functionalities that we designed were implemented
 
 ##### Timeline, map, chat
 The timeline and chat functionality uses dummy data and is not fully functional.
+
 <img align="center" src="./gifActiveDisaster.gif" width="30%" alt="activeDisaster"/>
 
-### Run the app?
+### Run the app
 Download the repository and run `npm run start`.
