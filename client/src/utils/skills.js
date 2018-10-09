@@ -1,14 +1,11 @@
 export const skills = [
-  'firefighter',
-  'docter'
+  'Firefighter',
+  'Docter'
 ];
 
 export const skillLevel = [
   'No Experience',
   'Little experience',
-  'Real-life experience, but no certificate',
   'Formal certificate',
-  'Formal certificate with real-life experience '
+  'Real-life experience '
 ];
-
-export const Mapping = 'Test'

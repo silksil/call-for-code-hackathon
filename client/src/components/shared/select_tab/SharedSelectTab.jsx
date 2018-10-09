@@ -1,9 +1,9 @@
 import React from 'react';
 import './SharedSelectTab.css';
 
-export default function SharedSelectTab (props) {
+export default function SharedSelectTab(props) {
   return (
-    <div className='boxes'>
+    <div className="boxes">
       {props.tabs.map(tab => {
         return (
           <button

@@ -2,16 +2,34 @@
   margin: 0px 10px;
 }
 
-.react-swipe-container {
-  margin: 20px auto;
-  background-color: white;
-  width: 85%;
-  height: 400px;
+.full-screen {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  background-image: url(../../assets/images/background-dummy.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.swipe {
-  border: 1px black solid;
-  width: 5px;
-  height: 400px;
-  background-color: pink;
+#homepage-header{
+  margin-top: 150px;
+}
+#homepage-subtitle{
+  margin-top: 15px;
+}
+#homepage-buttons{
+  text-align: center;
+  margin-top: 150px;
+  width: 100%;
+  padding: 0 50px;
+}
+
+#btn-left {
+  width: 49%;
+}
+
+#btn-homepage{
+  margin-top: 20px;
 }

@@ -1,0 +1,23 @@
+#skills-card {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+#skills-content {
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: #353A50;
+  position: relative;
+}
+
+#btn-skills {
+  bottom: -20px;
+  right: 20px;
+  position: absolute;
+}
+
+#btn-remove {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+}

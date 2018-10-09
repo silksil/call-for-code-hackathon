@@ -3,16 +3,17 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions';
 
+// Auth Higher Order Component
+import AuthHigherOrder from './auth/AuthHigherOrder';
+
 // No Auth Required
 import Nav from './nav/Nav';
 import Home from './home/Home';
 import Auth from './auth/AuthOverview';
-import AuthSignUp from './auth/AuthSignUp';
-import AuthSignIn from './auth/AuthSignIn';
 
 // Auth Required
 import AuthSignOut from './auth/AuthSignOut';
-import CreateProfile from './profile/CreateProfile';
+import Profile from './profile/Profile';
 import OverviewDisasters from './overview_disasters/OverviewDisasters';
 import OverviewDisastersSelected from './overview_disasters/OverviewDisastersSelected';
 import EnrolledDisasterOverview from './enrolled_disaster/EnrolledDisasterOverview';
@@ -20,7 +21,6 @@ import EnrolledDisasterOverview from './enrolled_disaster/EnrolledDisasterOvervi
 import './App.css';
 
 class App extends Component {
-
   render() {
     return (
       <div id="wrapper">
@@ -29,18 +29,16 @@ class App extends Component {
             <Nav/>
             <Route exact path="/" component={Home} />
             <Route exact path="/auth" component={Auth} />
-            <Route exact path="/signup" component={AuthSignUp} />
-            <Route exact path="/signin" component={AuthSignIn} />
-            <Route exact path="/signout" component={AuthSignOut} />
-            <Route exact path="/profile" component={CreateProfile} />
-            <Route exact path="/disasters" component={OverviewDisasters} />
-            <Route path="/disasters/:id" component={OverviewDisastersSelected} />
-            <Route path="/active-disaster/:id" component={EnrolledDisasterOverview} />
+            <Route exact path="/signout" component={AuthHigherOrder(AuthSignOut)} />
+            <Route exact path="/profile" component={AuthHigherOrder(Profile)} />
+            <Route exact path="/disasters" component={AuthHigherOrder(OverviewDisasters)} />
+            <Route path="/disasters/:id" component={AuthHigherOrder(OverviewDisastersSelected)} />
+            <Route path="/enrolled-disaster/:id" component={EnrolledDisasterOverview} />
           </div>
         </BrowserRouter>
       </div>
     );
   }
-};
+}
 
 export default connect(null, actions)(App);

@@ -3,6 +3,7 @@ const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+")
 
 export default(emails) => {
   const invalidEmails = emails
+
     .split(',')
     .map(email=> email.trim())
     .filter(email => !emailRegex.test(email))

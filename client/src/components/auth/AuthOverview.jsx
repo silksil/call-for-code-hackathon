@@ -15,15 +15,15 @@ class Auth extends Component {
     this.setState({ selectedTab: tab });
   }
 
-  renderContent(){
+  renderContent() {
     if (this.state.selectedTab === 'sign in') {
       return (
         <div>
-          <AuthSignIn/>
+          <AuthSignIn />
         </div>
-      )
+      );
     }
-    return <AuthSignUp/>
+    return <AuthSignUp />;
   }
 
   render() {
@@ -32,13 +32,13 @@ class Auth extends Component {
         <SharedSelectTab
           selectedTab={this.state.selectedTab}
           updateTab={this.updateTab}
-          tabs={['sign in', 'sign out']}
+          tabs={['sign in', 'sign up']}
         />
         <div className="container-90">
           {this.renderContent()}
         </div>
       </div>
-    )
+    );
   }
 }
 

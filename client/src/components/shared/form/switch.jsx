@@ -1,17 +1,17 @@
 import React from 'react';
 
-export default ({input, label, data, meta: { error, touched }}) => {
+export default ({ input, placeholder, className, data, meta: { error, touched }}) => {
   return (
-    <div>
-      <div>
-        <div className='box-slider input-light'>
-          <div className='box-left-text'> {label} </div>
-          <div className='box-right-switch'>
-            <label className="switch1">
-              <input type="checkbox" {...input}/>
-              <span className="slider-round"></span>
-            </label>
-          </div>
+    <div className={`input-box ${className}`}>
+      <div className="input-content">
+        <div className="input-left">
+          {placeholder}
+        </div>
+        <div className="input-right">
+          <label className="switch1">
+            <input type="checkbox" {...input} />
+            <span className="slider-round" />
+          </label>
         </div>
       </div>
     </div>

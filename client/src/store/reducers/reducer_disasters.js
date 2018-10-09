@@ -7,8 +7,8 @@ export default function (state = {}, action) {
     case FETCH_DISASTERS:
       const arrayToObject = (array, keyField) =>
         array.reduce((obj, item) => {
-          obj[item[keyField]] = item
-          return obj
+          obj[item[keyField]] = item;
+          return obj;
         }, {})
       return arrayToObject(action.payload, 'id')
     default:

@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default ({input, label, className, meta: { error, touched }}) => {
+export default ({ input, placeholder, type, className, meta: { error, touched } }) => {
   return (
-    <div>
-      <input{...input} className={className} placeholder={label}/>
-      <div className="red-text" style={{}}>
+    <div className="input-container">
+      <input {...input} className={className} placeholder={placeholder} type={type} />
+      <div className="red-text">
         {touched && error}
       </div>
     </div>

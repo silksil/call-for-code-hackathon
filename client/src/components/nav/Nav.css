@@ -1,7 +1,9 @@
-.nav {
+.nav-div {
    height: 50px;
+   width: 100%;
    position: relative;
-   color: white;
+   background-color: transparent;
+   z-index: 100;
 }
 
 #nav-icon {

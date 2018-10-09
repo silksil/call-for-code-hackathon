@@ -1,36 +1,21 @@
 import React, { Component } from 'react';
-import ReactSwipe from 'react-swipe';
 import { Link } from 'react-router-dom';
+
 import './Home.css';
 
-class Landing extends Component {
-
-  render() {
-    return (
-      <div className="center-text">
-        <h1>
-         <span className="big"> Respond. </span><span className="green big"> Smarter</span>
-        </h1>
-        <h2 className="grey"> Connecting volunteers throughout the world to
-  respond smarter to natural disasters.</h2>
-        <div>
-          <ReactSwipe  className="carousel" swipeOptions={{continuous: false}}>
-               <div className="swipe">PANE 1</div>
-               <div className="swipe">PANE 2</div>
-               <div className="swipe">PANE 3</div>
-          </ReactSwipe>
-          <div>
-          </div>
-          <Link className="btn-green" id="btn-landing" to={'/signup'}>Sign Up</Link>
-          <Link className="btn-white" id="btn-landing" to={'/signin'}>Sign In</Link>
-        </div>
+const Home = () => {
+  return (
+    <div className="center-text full-screen">
+      <div id="homepage-header">
+        <h1 className="white extra-big"> FirstConnect</h1>
+        <h2 className="white" id="homepage-subtitle"> Connecting first responders throughout the world to respond smarter to natural disasters.</h2>
       </div>
-    )
-  }
-}
+      <div id="homepage-buttons">
+        <Link className="btn btn-blue" id="btn-homepage" to={'/auth'}>Sign Up</Link>
+        <Link className="btn" id="btn-homepage" to={'/auth'}>Sign In</Link>
+      </div>
+    </div>
+  );
+};
 
-export default Landing;
-
-
-
-//
+export default Home;

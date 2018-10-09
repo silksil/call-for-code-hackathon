@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import SharedSelectTab from '../shared/select_tab/SharedSelectTab';
 import OverviewDisastersTab from './OverviewDisastersTab';
-import { fetchDisasters } from'../../store/actions/action_disasters';
+import { fetchDisasters } from '../../store/actions/action_disasters';
 import './OverviewDisasters.css';
 
-class DisastersOverview extends Component {
+class OverviewDisasters extends Component {
   constructor(props) {
     super(props);
     this.state = { selectedTab: 'my involvements' };
     this.updateTab = this.updateTab.bind(this);
   }
 
-  updateTab(tab) {
-    this.setState({ selectedTab: tab });
-  }
-
   componentDidMount() {
     this.props.fetchDisasters();
   }
 
-  renderContent(){
+  updateTab(tab) {
+    this.setState({ selectedTab: tab });
+  }
+
+  renderContent() {
     const allDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === false);
     const usersDisasters = Object.values(this.props.disasters).filter(disaster => disaster.active === true);
 
@@ -30,14 +32,14 @@ class DisastersOverview extends Component {
           selectedPage={this.state.selectedTab}
           disasters={allDisasters}
         />
-      )
+      );
     }
     return (
       <OverviewDisastersTab
         selectedPage={this.state.selectedTab}
         disasters={usersDisasters}
       />
-    )
+    );
   }
 
   render() {
@@ -50,7 +52,7 @@ class DisastersOverview extends Component {
         />
         {this.renderContent()}
       </div>
-    )
+    );
   }
 }
 
@@ -58,4 +60,6 @@ function mapStateToProps(state) {
   return { disasters: state.disasters };
 }
 
-export default connect(mapStateToProps, { fetchDisasters })(DisastersOverview);
+OverviewDisasters.propTypes = { disasters: PropTypes.object.isRequired };
+
+export default connect(mapStateToProps, { fetchDisasters })(OverviewDisasters);

@@ -4,7 +4,7 @@ import Chat from './EnrolledDisasterChat';
 import Map from './EnrolledDisasterMap';
 import Notifications from './EnrolledDisasterNotifications';
 
-class ActiveDisasterOverview extends Component {
+class EnrolledDisasterOverview extends Component {
   constructor(props) {
     super(props);
     this.state = { selectedTab: 'notifications' };
@@ -19,15 +19,15 @@ class ActiveDisasterOverview extends Component {
     const tab  = this.state.selectedTab;
     if (tab === 'notifications') {
       return (
-      <Notifications/>
+        <Notifications />
       );
     }
     if (tab === 'map') {
       return (
-      <Map/>
+        <Map />
       );
     }
-    return <Chat/>;
+    return <Chat />;
   }
 
   render() {
@@ -38,13 +38,12 @@ class ActiveDisasterOverview extends Component {
           updateTab={this.updateTab}
           tabs={['notifications', 'map', 'chat']}
         />
-        <div className='selected-wrapper'>
+        <div className="selected-wrapper">
           {this.renderContent()}
         </div>
       </div>
-    )
+    );
   }
 }
 
-
-export default ActiveDisasterOverview;
+export default EnrolledDisasterOverview;

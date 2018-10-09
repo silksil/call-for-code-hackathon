@@ -2,58 +2,70 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom'
+
 import { signUp } from '../../store/actions/action_auth'
+import InputField from '../shared/form/inputField';
+import validateEmails from '../../utils/validateEmails'
 
 class AuthSignUp extends Component {
   onSubmit = (formProps) => {
     this.props.signUp(formProps, () => {
-      this.props.history.push('/feature');
+      this.props.history.push('/disasters');
     });
   }
 
 	render() {
-    const className = `${this.props.errorMessage ? 'warning' : 's'}`;
-
     const { handleSubmit } = this.props;
 		return (
       <div>
   			<form onSubmit={handleSubmit(this.onSubmit)}>
-  				<fieldset>
-  					<label></label>
-  					<Field
-  						name="email"
-  						type="text"
-  						component="input"
-							autoComplete="none"
-							placeholder="Email"
-              className="input-light"
-  					/>
-  				</fieldset>
-  				<fieldset>
-  					<label></label>
-  					<Field
-  						name="password"
-  						type="password"
-  						component="input"
-							autoComplete="none"
-							placeholder="Password"
-              className="input-light"
-  					/>
-  				</fieldset>
-          <div className="warning-text"> {this.props.errorMessage}</div>
+					<label></label>
+					<Field
+						name="email"
+						type="text"
+						component={InputField}
+						autoComplete="none"
+						placeholder="Email"
+            className="input-light"
+					/>
+					<label></label>
+					<Field
+						name="password"
+						type="password"
+						component={InputField}
+						autoComplete="none"
+						placeholder="Password"
+            className="input-light"
+					/>
+          <div className="red-text">{this.props.errorMessage}</div>
           <button className="btn btn-blue">Sign Up!</button>
-  			</form>
+  		  </form>
       </div>
 		);
 	}
 }
 
-function mapStateToProps(state) {
-  return { errorMessage: state.auth.errorMessage };
+function validate(values) {
+	const errors = {};
+
+  errors.email = validateEmails(values.email || '')
+	if (!values.password) {
+		errors.password = 'Enter a password'
+	}
+	return errors;
 }
+
+function mapStateToProps(state) {
+  return { errorMessage: state.auth.errorMessageSignUp };
+}
+
+AuthSignUp.propTypes = { errorMessage: PropTypes.string };
 
 export default compose (
   connect(mapStateToProps, { signUp }),
-  reduxForm({ form: 'signUp' })
-)(AuthSignUp);
-// compose allows you to include as many higher order components with an easier to read syntax
+  reduxForm({
+    validate,
+    form: 'signUp' })
+)(withRouter(AuthSignUp));

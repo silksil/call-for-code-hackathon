@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ReactDOM from 'react-dom'
-import { fetchMap} from'../../store/actions/action_disasters';
+import PropTypes from 'prop-types';
 import mapboxgl from 'mapbox-gl'
+
+import { fetchMap} from'../../store/actions/action_disasters';
 import './EnrolledDisaster.css';
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3RyYXRvc3RzbyIsImEiOiJjamttZGUyMjMyYXd0M3BwOWhidDZ5am05In0.u6Lz6obeHCPxr8tKb9Km-g';
 
-class Map extends Component {
+class EnrolledDisasterMap extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -29,135 +30,135 @@ class Map extends Component {
     });
 
     var gpsLocation = {
-            "type": "FeatureCollection",
-            "features": [
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.74, 39.97]
-                },
-                "properties": {
-                    "username": "Barry Allen",
-                    "title": "Nurse",
-                    "icon": "nurse",
-                    "organisation": "Red Cross",
-                    "skills": "High Skilled"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.72,39.96]
-                },
-                "properties": {
-                    "username": "Raven Darkholme",
-                    "title": "Nurse",
-                    "icon": "nurse",
-                    "organisation": "Red Cross",
-                    "skills": "Low Skilled"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.745,39.955]
-                },
-                "properties": {
-                    "username": "Wade Wilson",
-                    "title": "Nurse",
-                    "icon": "nurse",
-                    "organisation": "Doctors Without Borders",
-                    "skills": "Trainee"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.75, 39.97]
-                },
-                "properties": {
-                    "username":"Bruce Banner",
-                    "title": "Doctor",
-                    "icon": "doctor",
-                    "organisation": "Red Cross",
-                    "skills": "Blood Specialist"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.76, 39.96]
-                },
-                "properties": {
-                    "username":"Tony Stark",
-                    "title": "Doctor",
-                    "icon": "doctor",
-                    "organisation": "Doctors Without Borders",
-                    "skills": "Anesthisiologist"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.764, 39.964]
-                },
-                "properties": {
-                    "username":"Hal Jordan",
-                    "title": "Doctor",
-                    "icon": "doctor",
-                    "organisation": "Doctors Without Borders",
-                    "skills": "Surgent"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.738, 39.979]
-                },
-                "properties": {
-                    "username":"Bruce Wayne",
-                    "title": "Engineer",
-                    "icon": "engineer",
-                    "organisation": "Engineers organisation",
-                    "skills": "CEO"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.733, 39.976]
-                },
-                "properties": {
-                    "username":"Clark Kent",
-                    "title": "Engineer",
-                    "icon": "engineer",
-                    "organisation": "Engineers organisation",
-                    "skills": "Structural"
-                }
-              },
-              {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [32.746, 39.966]
-                },
-                "properties": {
-                    "username":"Peter Parker",
-                    "title": "Engineer",
-                    "icon": "engineer",
-                    "organisation": "Engineers organisation",
-                    "skills": "Statical Engineer"
-                }
-              },
-            ]
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.74, 39.97]
+          },
+          "properties": {
+              "username": "Barry Allen",
+              "title": "Nurse",
+              "icon": "nurse",
+              "organisation": "Red Cross",
+              "skills": "High Skilled"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.72,39.96]
+          },
+          "properties": {
+              "username": "Raven Darkholme",
+              "title": "Nurse",
+              "icon": "nurse",
+              "organisation": "Red Cross",
+              "skills": "Low Skilled"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.745,39.955]
+          },
+          "properties": {
+              "username": "Wade Wilson",
+              "title": "Nurse",
+              "icon": "nurse",
+              "organisation": "Doctors Without Borders",
+              "skills": "Trainee"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.75, 39.97]
+          },
+          "properties": {
+              "username":"Bruce Banner",
+              "title": "Doctor",
+              "icon": "doctor",
+              "organisation": "Red Cross",
+              "skills": "Blood Specialist"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.76, 39.96]
+          },
+          "properties": {
+              "username":"Tony Stark",
+              "title": "Doctor",
+              "icon": "doctor",
+              "organisation": "Doctors Without Borders",
+              "skills": "Anesthisiologist"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.764, 39.964]
+          },
+          "properties": {
+              "username":"Hal Jordan",
+              "title": "Doctor",
+              "icon": "doctor",
+              "organisation": "Doctors Without Borders",
+              "skills": "Surgent"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.738, 39.979]
+          },
+          "properties": {
+              "username":"Bruce Wayne",
+              "title": "Engineer",
+              "icon": "engineer",
+              "organisation": "Engineers organisation",
+              "skills": "CEO"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.733, 39.976]
+          },
+          "properties": {
+              "username":"Clark Kent",
+              "title": "Engineer",
+              "icon": "engineer",
+              "organisation": "Engineers organisation",
+              "skills": "Structural"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+              "type": "Point",
+              "coordinates": [32.746, 39.966]
+          },
+          "properties": {
+              "username":"Peter Parker",
+              "title": "Engineer",
+              "icon": "engineer",
+              "organisation": "Engineers organisation",
+              "skills": "Statical Engineer"
+          }
+        },
+      ]
     };
 
     map.on('load', () => {
@@ -202,7 +203,7 @@ class Map extends Component {
               });
           }
       });
-      ///////////////////Nurse PopUp
+      // /Nurse PopUp
       map.on('click', function(e) {
         var features = map.queryRenderedFeatures(e.point, {
           layers: ['poi-nurse']
@@ -211,15 +212,6 @@ class Map extends Component {
         if (!features.length) {
           return;
         }
-
-        var feature = features[0];
-
-        var popup = new mapboxgl.Popup({ offset: [0, -15] })
-          .setLngLat(feature.geometry.coordinates)
-          .setHTML(
-            '<h3>'+feature.properties.username+'</h3><br /><p><h2><b>' + feature.properties.title + '</b></h2><br />Skills: ' + feature.properties.skills + '<br /><p>Organisation: ' + feature.properties.organisation  + '<br /></p>')
-          .setLngLat(feature.geometry.coordinates)
-          .addTo(map);
       });
 
       map.on('mouseenter', 'poi-nurse', function () {
@@ -239,15 +231,6 @@ class Map extends Component {
         if (!features.length) {
           return;
         }
-
-        var feature = features[0];
-
-        var popup = new mapboxgl.Popup({ offset: [0, -15] })
-          .setLngLat(feature.geometry.coordinates)
-          .setHTML(
-            '<h3>'+feature.properties.username+'</h3><br /><p><h2><b>' + feature.properties.title + '</b></h2><br />Skills: ' + feature.properties.skills + '<br /><p>Organisation: ' + feature.properties.organisation  + '<br /></p>')
-          .setLngLat(feature.geometry.coordinates)
-          .addTo(map);
       });
 
       map.on('mouseenter', 'poi-doctor', function () {
@@ -267,15 +250,6 @@ class Map extends Component {
         if (!features.length) {
           return;
         }
-
-        var feature = features[0];
-
-        var popup = new mapboxgl.Popup({ offset: [0, -15] })
-          .setLngLat(feature.geometry.coordinates)
-          .setHTML(
-            '<h3>'+feature.properties.username+'</h3><br /><p><h2><b>' + feature.properties.title + '</b></h2><br />Skills: ' + feature.properties.skills + '<br /><p>Organisation: ' + feature.properties.organisation  + '<br /></p>')
-          .setLngLat(feature.geometry.coordinates)
-          .addTo(map);
       });
 
       map.on('mouseenter', 'poi-engineer', function () {
@@ -290,30 +264,23 @@ class Map extends Component {
   }
 
   render() {
-    const { lng, lat, zoom } = this.state;
-
     return (
       <div className="">
         <div>
           <div ref={el => this.mapContainer = el} className="map-wrapper" />
           <nav id='filter-group' className='filter-group'></nav>
         </div>
-        <div>Icons made by
-            <a href="https://www.flaticon.com/authors/freepik" title="Nurse">Nurse</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                target="_blank">CC 3.0 BY</a>
-        </div>
-        <div>Icons made by
-            <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                target="_blank">CC 3.0 BY</a>
-        </div>
-
       </div>
     );
   }
 }
 
-export default connect(null, { fetchMap })(Map);
+function mapStateToProps(state) {
+  return { mapData: state.enrolledDisaster.mapData };
+}
+
+EnrolledDisasterMap.propTypes = {
+  notifications: PropTypes.object,
+};
+
+export default connect(mapStateToProps, { fetchMap })(EnrolledDisasterMap );
