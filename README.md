@@ -1,5 +1,5 @@
 ### Introduction
-This app has been while participating in the [Call for Code Hackathon](https://github.com/silksil/NOTES-CHEATSHEET/blob/master/productivity.md).For 2018, the Call for Code Global Challenge asks developers to create solutions that significantly improve preparedness for natural disasters and relief when they hit.
+This app has been while participating in the [Call for Code Hackathon](https://github.com/silksil/NOTES-CHEATSHEET/blob/master/productivity.md). For 2018, the Call for Code Global Challenge asked developers to create solutions that significantly improve preparedness for natural disasters and relief when they hit.
 
 The app has been programmed together with [Stratos Tsompanopoulos](https://www.linkedin.com/in/etsompanopoulos/) and [Tim van Vliet](https://www.linkedin.com/in/ACoAAA_PFNsBV4XKVT6WAdwhDbnGU-kaISXY6nU/)
 
@@ -10,7 +10,7 @@ The app has been programmed together with [Stratos Tsompanopoulos](https://www.l
 
 ### The idea
 ##### The problem
-1. First responders sometimes create more harm than that they do good, e.g. it can increase the complexity of coordination or they can make product, such as food, more scarce.
+1. First responders sometimes do more harm than that they do good, e.g. it can increase the complexity of coordination or they can make essential products, such as food, more scarce.
 2.  First responders may go to a disaster area without having the appropriate skills that an area needs.
 3.  Once on sight, it's a challenge to arrange the coordination and communication with the first responders.
 
@@ -21,7 +21,7 @@ The app has been programmed together with [Stratos Tsompanopoulos](https://www.l
 5. Once on sight, our app aimed to improve coordination and communication by offering 1.) a timeline in which non-profit organizations could share the latest updates 2.) a map showing where checkpoints are and where fellow volunteers are and 3.) a chat functionality.
 
 ### Result
-Given time constraints not all functionalities that we had in mind were eventually implemented in the final app that we submitted. The following functionalities were included in our final app:
+Given time constraints not all functionalities that we designed were implemented in the final app that we submitted. Nonetheless, the following functionalities were included in our final app:
 
 ##### Login system
 <img align="center" src="./gifLogin.gif" width="30%" alt="loginSystem"/>
@@ -32,11 +32,9 @@ Given time constraints not all functionalities that we had in mind were eventual
 ##### Overview of the disasters throughout the world and the one you 'subscribed' to
 <img align="center" src="./gifDisasters.gif" width="30%" alt="disastersOverview"/>
 
-
 ##### Timeline, map, chat
+The timeline and chat functionality uses dummy data and is not fully functional.
 <img align="center" src="./gifActiveDisaster.gif" width="30%" alt="activeDisaster"/>
-
-The timeline and chat used dummy data and is not fully functional.
 
 ### Run the app?
 Download the repository and run `npm run start`.
