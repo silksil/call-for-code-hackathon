@@ -1,7 +1,7 @@
 ### Introduction
 This app has been while participating in the [Call for Code Hackathon](https://github.com/silksil/NOTES-CHEATSHEET/blob/master/productivity.md). For 2018, the Call for Code Global Challenge asked developers to create solutions that significantly improve preparedness for natural disasters and relief when they hit.
 
-The app has been programmed together with [Stratos Tsompanopoulos](https://www.linkedin.com/in/etsompanopoulos/) and [Tim van Vliet](https://www.linkedin.com/in/ACoAAA_PFNsBV4XKVT6WAdwhDbnGU-kaISXY6nU/)
+The app has been programmed together with [Stratos Tsompanopoulos](https://www.linkedin.com/in/etsompanopoulos/) and [Tim van Vliet](https://www.linkedin.com/in/ACoAAA_PFNsBV4XKVT6WAdwhDbnGU-kaISXY6nU/). Other contributors were [Victoria Bunyard](https://www.linkedin.com/in/victoria-bunyard-863b49/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bn5w7RbajTpC%2BY%2FK32MfqlA%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base-recommendation_details_profile/), [Arthur Jurgens](https://www.linkedin.com/in/arthur-jurgens-948965/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bn5w7RbajTpC%2BY%2FK32MfqlA%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base-recommendation_details_profile) and [Youssef Quirini](https://www.linkedin.com/in/youssef-ouirini-94912926/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BNyKbNBLxTaKwU3qGxVWwhw%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base-recommendation_details_profile).
 
 ### My responsibilities
 - Given I was the only front-end web developer familiar with React and Redux I was responsible for create functionalities using these technologies.
